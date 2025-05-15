@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAPOR - AI Adventure System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/examples/jsm/lights/LightProbeGenerator.js": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/lights/LightProbeGenerator.js"
+            }
+        }
+    </script>
+</head>
+<body style="background-color:black">
+    <div id="panorama-container">
+        <!-- Panorama will be rendered here -->
+    </div>
+    
+    <div id="eye-mask" class="eye-closed">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path class="eye-shape top-lid" d="M0,0 L100,0 L100,20 Q50,15 0,20 Z" />
+
+            <path class="eye-shape bottom-lid" d="M0,100 L100,100 L100,80 Q50,85 0,80 Z" />
+        </svg>
+    </div>
+
+    <div id="ui-overlay">
+        <div id="location-info">
+            <h1 id="location-title">Wilderness Campsite</h1>
+            <div id="character-thoughts"></div>
+        </div>
+    </div>
+
+    <!-- Add audio element for background music -->
+    <audio id="background-music"></audio>
+
+    <div id="inspired-by"><a href="https://websim.ai/@Cinder/ai-skybox-generator-2" target="_blank" onclick="window.open(this.href, '_blank'); return false;">Inspired by...</a></div>
+    
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h2>VAPOR</h2>
+            <p>AI Adventure System</p>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script>
+        if (this.panoramaLoaded) {
+            const eyeMask = document.getElementById('eye-mask');
+            eyeMask.classList.remove('eye-closed');
+        }
+    </script>
+
+    <a target="_blank" href="https://jam.pieter.com" style="font-family: 'system-ui', sans-serif; position: fixed; top: 50px; right: -43px; padding: 7px; font-size: 11px; font-weight: bold; background: #000; color: #fff; text-decoration: none; z-index: 10; border-radius: 12px 12px 0px 0px; z-index: 10000; border: 1px solid rgba(125, 249, 255, 0.5);" class="vibe">🕹️ Vibe Jam 2025</a>
+  
+</body>
+</html>
